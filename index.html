@@ -13,13 +13,7 @@
   </head>
 
   <body>
-    <!--Music Player-->
 
-    <audio autoplay loop>
-      <source src="assets/mp3/music.mp3">
-    </audio>
-
-    <!--End of Music Player-->
     <!-- Parallax Pixel Background Animation -->
     <section class="animated-background">
       <div id="stars1"></div>
@@ -81,6 +75,15 @@
     <div id="hashtag">
       #BeYourself!
     </div>
+
+    <audio id="audio" style="display:none;" src="assets/mp3/music.mp3" controls autoplay loop onloadeddata="setHalfVolume()">
+
+      <script>
+        function setHalfVolume() {
+            var myAudio = document.getElementById("audio");
+            myAudio.volume = 0.4;
+        }
+    </script>
     
   </body>
 
