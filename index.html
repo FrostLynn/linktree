@@ -4,89 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akhdan Rafif Nugraha</title>
-    <!-- Favicon -->
-    <link rel="icon" href="assets\img\profile.png" type="image/x-icon" />
-    <!-- Font Awesome icons -->
+    <link rel="icon" href="assets/img/profile.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Core theme CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <script>
-        function setHalfVolume() {
-            var myAudio = document.getElementById("audio");
-            myAudio.volume = 0.4;
-        }
-    </script>
   </head>
 
   <body>
 
-    <!-- Parallax Pixel Background Animation -->
-    <section class="animated-background">
-      <div id="stars1"></div>
-      <div id="stars2"></div>
-      <div id="stars3"></div>
-    </section>
-    <!-- End of Parallax Pixel Background Animation -->
+    <main class="container">
 
-    <a id="profilePicture" href="#popup">
-      <img src="assets\img\profile.png" alt="Profile Picture">
-    </a>
+      <a id="profilePicture" href="#popup">
+        <img src="assets/img/profile.png" alt="Profile Picture">
+      </a>
 
-    <div class="overlay" id="popup">
-      <div class="popup">
-        <div class="popup-photo">
-          <a href="assets\img\profile.png" target="_blank">
-            <img src="assets\img\profile.png" alt="Profile Picture">
-          </a>
+      <div class="overlay" id="popup">
+        <div class="popup">
+          <div class="popup-photo">
+            <a href="assets/img/profile.png" target="_blank">
+              <img src="assets/img/profile.png" alt="Profile Picture">
+            </a>
+          </div>
+          <p class="popup-quote">
+            "In the grand quest of life, every choice shapes the narrative, 
+            every challenge hones the character, 
+            and every triumph unlocks the next level of our existence. 
+            Embrace the adventure, for in the realm of destiny, 
+            we are the architects of our own epic tale."
+          </p>
+          <a class="popup-close" onclick="history.back()">&times;</a>
         </div>
-        <div class="popup-quote">
-          "In the grand quest of life, every choice shapes the narrative, 
-          every challenge hones the character, 
-          and every triumph unlocks the next level of our existence. 
-          Embrace the adventure, for in the realm of destiny, 
-          we are the architects of our own epic tale."
-        </div>
-        <a class="popup-close" onclick="history.back()">&times;</a>
       </div>
-    </div>
 
-    <div id="userName">
-      @frostlynn
-    </div>
+      <h1 id="userName">@frostlynn</h1>
 
-    <div id="links">
-      <a class="link" href="https://github.com/FrostLynn" target="_blank">
-        <i class="fab fa-github">&nbsp;</i>Github
-      </a>
-      <a class="link" href="https://www.linkedin.com/in/akhdanrn/" target="_blank">
-        <i class="fab fa-linkedin">&nbsp;</i>Linkedin
-      </a>
-      <a class="link" href="https://www.facebook.com/akhdan.r.nugraha" target="_blank">
-        <i class="fab fa-facebook">&nbsp;</i>Facebook
-      </a>
-      <a class="link" href="https://www.instagram.com/akhdan.rn/" target="_blank">
-        <i class="fab fa-instagram">&nbsp;</i>Instagram
-      </a>
-      <a class="link" href="https://twitter.com/akhdan_rn" target="_blank">
-        <i class="fab fa-twitter">&nbsp;</i>Twitter
-      </a>
-      <a class="link" href="https://www.threads.net/@akhdan.rn" target="_blank">
-        <i class="fa-brands fa-threads"></i>&nbsp;</i>Threads
-      </a>
-      <a class="link" href="https://steamcommunity.com/id/FrostLynn/" target="_blank">
-        <i class="fa-brands fa-steam"></i>&nbsp;</i>Steam Profile
-      </a>
-      <a class="link" href="https://frostlynn.github.io/linktree-project/" target="_blank">
-        <i class="fa-solid fa-bars-progress"></i>&nbsp;</i>My Random Project
-      </a>
-    </div>
+      <nav id="links">
+        <a class="link" href="https://github.com/FrostLynn" target="_blank">
+          <i class="fab fa-github"></i> Github
+        </a>
+        <a class="link" href="https://www.linkedin.com/in/akhdanrn/" target="_blank">
+          <i class="fab fa-linkedin"></i> Linkedin
+        </a>
+        <a class="link" href="https://www.facebook.com/akhdan.r.nugraha" target="_blank">
+          <i class="fab fa-facebook"></i> Facebook
+        </a>
+        <a class="link" href="https://www.instagram.com/akhdan.rn/" target="_blank">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a class="link" href="https://twitter.com/akhdan_rn" target="_blank">
+          <i class="fab fa-twitter"></i> Twitter
+        </a>
+        <a class="link" href="https://www.threads.net/@akhdan.rn" target="_blank">
+          <i class="fa-brands fa-threads"></i> Threads
+        </a>
+        <a class="link" href="https://steamcommunity.com/id/FrostLynn/" target="_blank">
+          <i class="fa-brands fa-steam"></i> Steam Profile
+        </a>
+        <a class="link" href="https://frostlynn.github.io/linktree-project/" target="_blank">
+          <i class="fa-solid fa-bars-progress"></i> My Random Project
+        </a>
+      </nav>
 
-    <div id="hashtag">
-      #BeYourself!
-    </div>
+      <p id="hashtag">#BeYourself!</p>
 
-    <audio id="audio" style="display:none;" src="assets/mp3/music.mp3" controls autoplay loop onloadeddata="setHalfVolume()">
-    
+    </main>
+
+    <audio id="audio" src="assets/mp3/music.mp3" loop autoplay></audio>
+    <button id="musicToggle" aria-label="Toggle music">
+      <i class="fa-solid fa-volume-high"></i>
+    </button>
+
+    <script>
+      const audio = document.getElementById('audio');
+      const btn = document.getElementById('musicToggle');
+      const icon = btn.querySelector('i');
+      audio.volume = 0.4;
+      let playing = true;
+
+      // Handle browsers that block autoplay
+      audio.play().catch(() => {
+        playing = false;
+        icon.className = 'fa-solid fa-volume-xmark';
+      });
+
+      btn.addEventListener('click', () => {
+        if (playing) {
+          audio.pause();
+          icon.className = 'fa-solid fa-volume-xmark';
+        } else {
+          audio.play();
+          icon.className = 'fa-solid fa-volume-high';
+        }
+        playing = !playing;
+      });
+    </script>
+
   </body>
-
 </html>
