@@ -1,10 +1,8 @@
-# frostlynn.github.io
-
 A personal link-in-bio page for **Akhdan Rafif Nugraha** — built with a **neo brutalism** design style.
 
 ## Preview
 
-Visit the live site: [frostlynn.github.io](https://frostlynn.github.io)
+Visit the live site: [here](https://lt.frostlynn.my.id/)
 
 ## Features
 
@@ -46,7 +44,3 @@ cd frostlynn.github.io
 # Open in browser
 open index.html
 ```
-
-## License
-
-See [LICENSE.MD](LICENSE.MD) for details.
