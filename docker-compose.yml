@@ -1,0 +1,7 @@
+services:
+  linktree:
+    image: ghcr.io/frostlynn/linktree:latest
+    container_name: linktree
+    restart: unless-stopped
+    ports:
+      - "8001:80"

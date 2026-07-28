@@ -61,14 +61,8 @@ jobs:
       - name: Deploy via SSH
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-            cd /home/${{ secrets.SSH_USER }}
-            docker pull ghcr.io/${{ github.repository }}:latest
-            docker stop linktree 2>/dev/null || true
-            docker rm linktree 2>/dev/null || true
-            docker run -d \
-              --name linktree \
-              -p 80:80 \
-              --restart unless-stopped \
-              ghcr.io/${{ github.repository }}:latest
+            cd /home/${{ secrets.SSH_USER }}/linktree
+            docker compose pull
+            docker compose up -d --remove-orphans
             docker image prune -f
           EOF
